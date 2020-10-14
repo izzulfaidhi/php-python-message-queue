@@ -2,7 +2,7 @@
 
 ## Setup ##
 
-Ensure you have [composer](http://getcomposer.org) and [python37](https://www.python.org/downloads)  installed, then run the following command:
+Have [composer](http://getcomposer.org), [python37](https://www.python.org/downloads), [docker](https://www.docker.com/products/docker-desktop) installed, then run the following command:
 
 ```bash
 $ php composer.phar install
@@ -13,19 +13,21 @@ $ pip install -r requirements.txt
 ```
 
 ## Usage ##
+Execute commands for rabbitmq:
+```bash
+$ cd rabbitmq
+$ docker-compose up
+```
 
-Execute commands:
-
+Execute commands for receiver:
 ```bash
 $ cd receiver
 $ php receiver.php
 ```
 
-Then on the other Terminal do:
+Execute commands for sender:
 
 ```bash
 $ cd sender
 $ python main.py
 ```
-
-You should see the message arriving to the process on the other Terminal

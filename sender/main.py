@@ -4,7 +4,7 @@ import psutil
 from env import PORT, HOSTNAME, USERNAME, PASSWORD
 
 credentials = pika.PlainCredentials(USERNAME, PASSWORD)
-connection = pika.BlockingConnection(pika.ConnectionParameters(HOSTNAME, PORT, USERNAME, credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters(HOSTNAME, PORT, "/", credentials))
 channel = connection.channel()
 
 channel.queue_declare(queue='test')
