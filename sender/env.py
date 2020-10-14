@@ -1,4 +1,4 @@
-HOSTNAME = 'mustang.rmq.cloudamqp.com'
+HOSTNAME = 'localhost'
 PORT = 5672
-USERNAME = 'etczwxpf'
-PASSWORD = '3-oSk1DeMXjUlnm7eErIB7lmYmCctsb7'
+USERNAME = 'guest'
+PASSWORD = 'guest'

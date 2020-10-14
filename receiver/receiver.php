@@ -10,7 +10,7 @@ $PORT = $_ENV['PORT'];
 $USERNAME = $_ENV['USERNAME'];
 $PASSWORD = $_ENV['PASSWORD'];
 
-$connection = new AMQPStreamConnection($HOST, $PORT, $USERNAME, $PASSWORD, $USERNAME);
+$connection = new AMQPStreamConnection($HOST, $PORT, $USERNAME, $PASSWORD, "/");
 $channel = $connection->channel();
 
 $channel->queue_declare('test', false, false, false, false);
