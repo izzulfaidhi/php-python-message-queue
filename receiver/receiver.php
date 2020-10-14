@@ -2,8 +2,15 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-$connection = new AMQPStreamConnection('mustang.rmq.cloudamqp.com', 5672, 'etczwxpf', '3-oSk1DeMXjUlnm7eErIB7lmYmCctsb7', 'etczwxpf');
+$HOST = $_ENV['HOST'];
+$PORT = $_ENV['PORT'];
+$USERNAME = $_ENV['USERNAME'];
+$PASSWORD = $_ENV['PASSWORD'];
+
+$connection = new AMQPStreamConnection($HOST, $PORT, $USERNAME, $PASSWORD, $USERNAME);
 $channel = $connection->channel();
 
 $channel->queue_declare('test', false, false, false, false);
